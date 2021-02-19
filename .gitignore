@@ -1,0 +1,58 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# temporary files
+tmp/
+.eslintcache/
+.eslintcache
+.cache/
+.cache
+.temp-eslintcache
+.temp-eslintcache/
+.sass-cache
+.sass-cache/
+
+# undesired config files
+.sublimelinterrc
+/.vscode
+
+# testing
+/coverage
+test.js
+
+# production
+/build
+
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Optional npm cache directory
+.npm
+
+# Yarn Integrity file
+.yarn-integrity
+
+# OS specyfic
+.DS_Store
+
+# env's
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+debug/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
