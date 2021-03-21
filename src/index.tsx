@@ -8,13 +8,13 @@ import { App } from 'components/App';
 import { theme } from 'styles/themeDefault';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Router>
-            <GlobalStyles />
-            <ThemeProvider theme={theme}>
-                <App />
-            </ThemeProvider>
-        </Router>
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    <Router>
+      <GlobalStyles />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </Router>
+  </React.StrictMode>,
+  document.querySelector('#root'),
 );

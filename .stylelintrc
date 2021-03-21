@@ -3,7 +3,7 @@
     "extends": ["stylelint-config-standard", "stylelint-config-styled-components", "stylelint-config-prettier"],
     "syntax": "scss",
     "rules": {
-        "indentation": [4, { "baseIndentLevel": 2 }],
+        "indentation": [2, { "baseIndentLevel": 1 }],
         "declaration-empty-line-before": [
             "always",
             {

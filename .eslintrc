@@ -1,85 +1,93 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-typescript", // Uses the rules from eslint-config-airbnb-typescript
+    "airbnb/hooks", // Uses the react hooks rules from eslint-config-airbnb-typescript
+    "plugin:eslint-comments/recommended", // Uses the recommended rules from @eslint-plugin-eslint-comments
+    "plugin:jest/recommended", // Uses the recommended rules from @eslint-plugin-jest
+    "plugin:promise/recommended", // Uses the recommended rules from @eslint-plugin-promise
+    "plugin:unicorn/recommended", // Uses the recommended rules from @eslint-plugin-unicorn
+    "prettier/react", // Uses eslint-config-prettier to disable ESLint rules from @eslint-plugin-react that would conflict with prettier
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from @typescript-eslint/eslint-plugin
+    "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "airbnb",
-        "airbnb/hooks",
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/errors",
-        "plugin:import/typescript",
-        "plugin:import/warnings",
-        "plugin:jest/recommended",
-        "plugin:jsx-a11y/recommended",
-        "plugin:prettier/recommended",
-        "plugin:react/recommended",
-        "plugin:react/recommended",
-        "prettier",
-        "prettier/@typescript-eslint",
-        "prettier/react"
+    "project": "tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["prettier", "react", "@typescript-eslint", "import", "jsx-a11y"],
+  "rules": {
+    "indent": [2, 2],
+    "arrow-body-style": 0,
+    "class-methods-use-this": ["warn", { "exceptMethods": ["isOverlappingWith"] }],
+    "function-call-argument-newline": 0,
+    "import/prefer-default-export": 0,
+    "jsx-quotes": ["warn", "prefer-single"],
+    "lines-between-class-members": 0,
+    "newline-before-return": ["warn"],
+    "no-console": "warn",
+    "no-nested-ternary": 0,
+    "no-shadow": "error",
+    "no-use-before-define": 0,
+    "prettier/prettier": "warn",
+    "react/display-name": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-first-prop-new-line": [1, "multiline-multiprop"],
+    "react/jsx-max-props-per-line": [1, { "maximum": 2, "when": "multiline" }],
+    "react/jsx-props-no-spreading": 0,
+    "react/prop-types": 0,
+    "react/static-property-placement": 0,
+    "jsx-a11y/alt-text": [
+      2,
+      {
+        "img": ["ExpertImage"]
+      }
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "unicorn/filename-case": [
+      "warn",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
         },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
+        "ignore": ["^SEO.tsx$"]
+      }
+    ]
+  },
+  "ignorePatterns": ["react-app-env.d.ts"],
+  "settings": {
+    "react": {
+      "version": "detect"
     },
-    "plugins": ["prettier", "react", "@typescript-eslint", "import", "jsx-a11y"],
-    "rules": {
-        "arrow-body-style": 0,
-        "class-methods-use-this": ["warn", { "exceptMethods": ["isOverlappingWith"] }],
-        "function-call-argument-newline": 0,
-        "import/prefer-default-export": 0,
-        "jsx-quotes": ["warn", "prefer-single"],
-        "lines-between-class-members": 0,
-        "newline-before-return": ["warn"],
-        "no-console": "warn",
-        "no-nested-ternary": 0,
-        "no-shadow": "error",
-        "no-use-before-define": 0,
-        "prettier/prettier": "warn",
-        "react/display-name": 0,
-        "react/jsx-filename-extension": 0,
-        "react/jsx-first-prop-new-line": [1, "multiline-multiprop"],
-        "react/jsx-max-props-per-line": [1, { "maximum": 2, "when": "multiline" }],
-        "react/jsx-props-no-spreading": 0,
-        "react/prop-types": 0,
-        "react/static-property-placement": 0,
-        "jsx-a11y/alt-text": [
-            2,
-            {
-                "img": ["ExpertImage"]
-            }
-        ],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "js": "never",
-                "mjs": "never",
-                "jsx": "never",
-                "ts": "never",
-                "tsx": "never"
-            }
-        ],
-        "import/no-extraneous-dependencies": 0,
-        "@typescript-eslint/no-unused-vars": 0
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        },
-        "import/resolver": {
-            "typescript": {}
-        }
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".d.ts", ".ts", ".tsx"],
+        "paths": ["src"]
+      }
     }
+  }
 }

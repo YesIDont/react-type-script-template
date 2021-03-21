@@ -1,11 +1,11 @@
 export interface ObjectOfNumbers {
-    [key: string]: number;
+  [key: string]: number;
 }
 
 export interface ObjectOfStrings {
-    [key: string]: string;
+  [key: string]: string;
 }
 
 export interface ObjectOfColorGetters {
-    [key: string]: (opacity: number) => string;
+  [key: string]: (opacity: number) => string;
 }

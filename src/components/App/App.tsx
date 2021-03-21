@@ -7,13 +7,13 @@ import storeContext from 'stores/globalStore';
 import * as Styled from './App.styled';
 
 export const App: React.FC = observer(() => {
-    const store = useContext(storeContext);
+  const store = useContext(storeContext);
 
-    return (
-        <Styled.App>
-            <SEO />
-            <Navigation />
-            <div>{store.getContent()}</div>
-        </Styled.App>
-    );
+  return (
+    <Styled.App>
+      <SEO />
+      <Navigation />
+      <div>{store.getContent()}</div>
+    </Styled.App>
+  );
 });
