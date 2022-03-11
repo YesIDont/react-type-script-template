@@ -10,15 +10,12 @@ module.exports = {
     node: true,
   },
   extends: [
-    'airbnb-typescript', // Uses the rules from eslint-config-airbnb-typescript
-    'airbnb/hooks', // Uses the react hooks rules from eslint-config-airbnb-typescript
-    'plugin:eslint-comments/recommended', // Uses the recommended rules from @eslint-plugin-eslint-comments
-    'plugin:jest/recommended', // Uses the recommended rules from @eslint-plugin-jest
-    'plugin:promise/recommended', // Uses the recommended rules from @eslint-plugin-promise
-    'prettier/react', // Uses eslint-config-prettier to disable ESLint rules from @eslint-plugin-react that would conflict with prettier
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from @typescript-eslint/eslint-plugin
-    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    'airbnb-typescript',
+    'plugin:eslint-comments/recommended',
+    'plugin:jest/recommended',
+    'plugin:promise/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
   globals: {
     Atomics: 'readonly',

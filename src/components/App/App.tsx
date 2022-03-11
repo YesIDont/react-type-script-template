@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 import { Navigation } from 'components/Navigation';
 import { SEO } from 'components/SEO';
-import { ToggleSwitch } from 'components/ToggleSwitch';
+import { HelmetProvider } from 'react-helmet-async';
 
 export const AppContainer = styled.div(
   ({ theme: { colors } }) => css`
@@ -23,19 +23,11 @@ export const Content = styled.div(
 export const App: React.FC = () => {
   return (
     <AppContainer>
-      <SEO />
-      <Content>
-        <ToggleSwitch
-          id='test-checkbox'
-          onChange={(value: boolean, target?: HTMLInputElement) => {
-            // eslint-disable-next-line no-alert
-            if (target) alert(`Current value of the ${target.id} is: ${value}`);
-          }}
-        >
-          Option with true / false value
-        </ToggleSwitch>
-      </Content>
-      <Navigation />
+      <HelmetProvider>
+        <SEO />
+        <Content>Content</Content>
+        <Navigation />
+      </HelmetProvider>
     </AppContainer>
   );
 };
