@@ -5,6 +5,7 @@ import * as colors from './colors';
 export const colorsLibrary: ObjectOfStrings = {
   primary: setColor(colors.gray40),
   secondary: setColor(colors.white),
+  shadeDeepDark: setColor(colors.gray20),
   shadeDark: setColor(colors.gray60),
   shadeMid: setColor(colors.gray80),
   shadeLight: setColor(colors.gray100),

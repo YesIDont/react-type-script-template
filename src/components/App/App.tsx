@@ -6,17 +6,18 @@ import { SEO } from 'components/SEO';
 import { HelmetProvider } from 'react-helmet-async';
 
 export const AppContainer = styled.div(
-  ({ theme: { colors } }) => css`
-    color: ${colors.primary};
+  () => css`
     display: flex;
     justify-content: space-between;
   `,
 );
 
 export const Content = styled.div(
-  ({ theme: { padding } }) => css`
+  ({ theme: { colors, padding } }) => css`
     flex: 1;
     padding: ${padding.small};
+    background: ${colors.shadeDeepDark};
+    color: ${colors.secondary};
   `,
 );
 
