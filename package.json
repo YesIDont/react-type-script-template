@@ -45,10 +45,11 @@
     "react-scripts": "^5.0.0",
     "stylelint": "^14.5.3",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
-    "stylint": "^2.0.0",
+    "tsc-files": "^1.1.3",
     "typescript": "^4.6.2"
   },
   "scripts": {
@@ -57,6 +58,7 @@
     "eject": "react-scripts eject",
     "release": "standard-version",
     "lint": "eslint --ext ts,tsx ./src/ && stylelint **/*.styled.{ts,tsx}",
+    "lint:style": "stylelint ./src/**/*.{ts,tsx}",
     "lint-single": "eslint --ext ts,tsx",
     "lint:fix": "eslint ./src/ --fix --ext ts --ext tsx",
     "type-check": "tsc"
@@ -83,9 +85,11 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,json}": "pretty-quick --staged",
-    "*.{ts,tsx}": [
-      "eslint --ext ts,tsx src/"
+    "**/*.{ts, sass}": [
+      "yarn tsc-files --noEmit --pretty",
+      "yarn pretty-quick --staged",
+      "yarn lint",
+      "yarn lint:style"
     ]
   },
   "config": {

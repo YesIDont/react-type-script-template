@@ -33,16 +33,20 @@ export const GlobalStyles = createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+
   body {
     font-size: 16px;
     line-height: 1;
   }
+
   ol, ul {
     list-style: none;
   }
+
   blockquote, q {
     quotes: none;
   }
+
   blockquote::before,
   blockquote::after,
   q::before,
@@ -50,6 +54,7 @@ export const GlobalStyles = createGlobalStyle`
     content: '';
     content: none;
   }
+
   table {
     border-collapse: collapse;
     border-spacing: 0;
